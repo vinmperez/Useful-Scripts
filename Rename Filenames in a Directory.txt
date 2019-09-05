@@ -1,0 +1,12 @@
+%%%This is a line to replace all parts of a filename in a directory with a different string%%%
+
+%%%In the windows power shell use this.
+get-childitem *.mp3 | foreach { rename-item $_ $_.Name.Replace("Radiohead -", "") }
+
+%get-childitem *.mp3
+%This lists all files whose names end with .mp3.  They are then piped to the next command with the | operator.
+
+%foreach { rename-item $_ $_.Name.Replace("Radiohead -", "") }
+%This replaces all instances of Radiohead - with nothing, denoted by "", effectively wiping the word from all the files in the directory.
+
+%You could also modify get-childitem *.mp3 to get-childitem – that would rename all the files in the directory, not just files whose names end with .mp3. 

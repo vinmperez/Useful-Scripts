@@ -1,0 +1,25 @@
+%%% This Tutorial will help you to generate condition/tissue specific models using gene expression data %%%
+
+%% Load expressionData:  mRNA expression Data structure
+%% Locus Vector containing GeneIDs
+%% Data Presence/Absence Calls
+ 
+expressionData = tdfread('expressionDatawt.txt');
+
+%%% Read the FPKM expression data file for each week/condition/Tissue
+
+expressionData.gene = cellstr(expressionData.gene)
+[expressionRxns parsedGPR] = mapExpressionToReactions(model_c57Liver, expressionData);
+
+options.expressionRxns=expressionRxns
+options.threshold = 1 % Set the threshold for expression data,. You can set threshold depending upon your experimental conditions. setting 1 is the lowest threshold for FPKM, you can set for the reaction to be active
+options.solver = 'GIMME'
+funcModel=0; %% 1 - Build a functional model having only reactions that can carry a flux (using FVA), 0 - skip this step (Default = 0)
+exRxnRemove={}; %% Names of exchange reactions to remove (Default = [])
+
+
+####go back and remove exRxnRmove and funcModel0
+
+trtModel = createTissueSpecificModel(model_c57Liver, options,funcModel,exRxnRemove)
+
+sol_trtModel_liver = optimizeCbModel(trtModel);

@@ -1,0 +1,6 @@
+%%%%%%USEFULE PYTHON COMMANDS%%%%%%%%%%%%
+
+%%install python packages at the windows command line%%%%
+py -m pip install [your package]
+dir() - inspects the console and lets you know what objects exist.....not intuitive imo
+

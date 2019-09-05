@@ -1,0 +1,18 @@
+%This is a list of Matlab Cobra Toolbox Commands%
+
+initCobraToolbox	% Initiates the toolbox
+model=readCbModel	% Allows you to open up an xml file
+writeCbModel()	% Writes out the current model
+cellstr(char.header)	% Converts a character to a cellstr
+tdfread()	% Reads a csv file or text file
+tblread()	% Reads a table
+printRxnFormula(model_Obj_biomass, chowList)	%Prints reaction formula from a list (list being "Rxn Id","Rxn Id", et cetera
+writeCbModel(model,'xlsx','mouseLiverWTmodel')	%Writes the model as an excel file
+modelNew = changeObjective(model, 'GLCt1r', 0.5);	%changes the objective function
+modelNew = changeObjective(model, 'GLCt1r', 0.5);	%finds exchange reactions
+changeRxnBounds(model, rxnNameList, value, boundType)
+changeCobraSolver(solverName, solverType, printLevel, ValidationLevel) ex. changeCobraSolver('gurobi')
+[hiCarbonRxns, zeroCarbonRxns, nCarbon]=findCarbonRxns(model, nCarbonThr)	%nCarbonThr = defines the minimum number of carbons that a metabolite can have in the final list of reactions
+combine2models() 	%combines 2 models
+extractSubnetwork() 	%extracts all the rules of reactions based on the reaction identifier (i.e. HMR_0031)
+combobjectivereaction

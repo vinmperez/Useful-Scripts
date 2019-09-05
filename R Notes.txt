@@ -1,0 +1,8 @@
+#########Useful R commands########
+
+.Library	#is a character string giving the location of the default library, the ‘library’ subdirectory of R_HOME.
+.libPaths	#is used for getting or setting the library trees that R knows about (and hence uses when.libPaths is 
+			#used for getting or setting the library trees that R knows about (and hence uses when looking for packages).  looking for packages). 
+install.packages(, dependencies=TRUE)	#install yo packages and its dependencies
+library(help=ts)	#lists the functions of the package ts
+browsevignettes('yourpackagename')	#take a look at the user manual online
